@@ -1,1 +1,5 @@
-<p>product-details works!</p>
+<h2>{{currentItem.itemName}}</h2>
+<p>{{currentItem.description}}</p>
+<div *ngIf="currentItem.dairyFree">It's Dairy Free!</div>
+<p>{{currentItem.price}}</p>
+<img [src]="currentItem.imageUrl" alt="coffeeImg"/>

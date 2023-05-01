@@ -1,0 +1,36 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label  for="productName">Coffee Name</label>
+        <input type="text" name="productName" id="productName" [(ngModel)]="newItem.itemName">
+    </div>
+
+
+    <div class="mb-3">
+        <label  for="description">Coffee description</label>
+        <input type="text" name="description" id="description" [(ngModel)]="newItem.description">
+    </div>
+
+    <div>
+        <!-- <label  for="isDairy">has dairy.</label>
+        <input type="radio" id="isDairy" name="dairy"  value="true" [(ngModel)]="newItem.dairyfree">
+        <label for="isNotDairy">has no dairy.</label>
+        <input type="radio" id="isNotDairy" name="dairy" value="false" [(ngModel)]="newItem.dairyfree"> -->
+        <label for="isDairy">Does it have Dairy</label>
+        <input type="text" id="isDairy" name="isDairy" [(ngModel)]="newItem.dairyFree">
+    </div>
+
+    <div>
+        <label  for="price">Coffee Price</label>
+        <input type="text" name="price" id="price" [(ngModel)]="newItem.price">
+    </div>
+
+    <div>
+        <label  for="Image">Coffee Image</label>
+        <input type="text" name="Image" id="Image" [(ngModel)]="newItem.imageUrl">
+    </div>
+
+
+
+
+    <button type="submit">CREATE</button>
+</form>

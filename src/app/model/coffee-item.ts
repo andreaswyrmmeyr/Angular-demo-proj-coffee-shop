@@ -2,7 +2,7 @@ export class CoffeeItem {
     id: number = 0;
     itemName: string = '';
     description: string = '';
-    dairyfree: boolean = false;
+    dairyFree: string = '';
     price: number = 0;
     imageUrl: string = '';
 }

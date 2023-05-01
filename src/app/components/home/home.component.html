@@ -1,4 +1,10 @@
 <header>
     <img src="assets/Prefix_solid_black.png" alt="prefix-logo">
 </header>
-<!-- <div *ngFor="Let w of ProductList"></div> -->
+<div *ngFor="let item of coffeeList">
+    <h2>{{item.itemName}}</h2>
+    <p>{{item.description}}</p>
+    <p *ngIf="">It's Dairy Free!</p>
+    <p>{{item.price}}</p>
+    <img [src]="item.imageUrl" alt="coffeeImg"/>
+</div>

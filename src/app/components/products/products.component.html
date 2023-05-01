@@ -1,2 +1,16 @@
 
 <h1>this still needs work waiting for service and Angular material.</h1>
+<button (click)="sortProductsAsc()">low-high</button>
+<button (click)="loadProducts()">base</button>
+<button (click)="sortProductsDesc()">high-low</button>
+<a routerLink="/add">Make new coffee listing</a>
+<div *ngFor="let item of coffeeList">
+    <h2>{{item.itemName}}</h2>
+    <p>{{item.description}}</p>
+    <p *ngIf="item.dairyFree">It's Dairy Free!</p>
+    <p>{{item.price}}</p>
+    <img [src]="item.imageUrl" alt="coffeeImg"/>
+    <button [routerLink]='["/products", item.id]'>Details</button>
+    <button [routerLink]='["/edit", item.id]'>Edit</button>
+    <button (click)="onDelete(item.id)">Delete</button>
+</div>
