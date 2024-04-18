@@ -26,16 +26,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  sortProductsAsc() {
-    this.productService.sortProductByNameAsc().subscribe(Asc => {
-      this.coffeeList = Asc;
-    });
-  }
-
-  sortProductsDesc() {
-    this.productService.sortProductByNameDesc().subscribe(Desc => {
-      this.coffeeList = Desc;
-    });
-  }
-
 }

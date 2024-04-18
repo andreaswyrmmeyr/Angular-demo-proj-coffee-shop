@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoffeeItem } from 'src/app/model/coffee-item';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
 
    currentItem: CoffeeItem = new CoffeeItem;
 
-  constructor(private productService: ProductService, private actRoute: ActivatedRoute) { }
+  constructor(private productService: ProductService, private actRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     const routeId = this.actRoute.snapshot.paramMap.get("id") ?? "";
@@ -26,5 +26,11 @@ export class ProductDetailsComponent implements OnInit {
       this.currentItem = foundItem;
     });
   }
+
+  onDelete(testId: number) {
+    this.productService.deleteProductById(testId).subscribe(response => {
+      this.route.navigateByUrl("/products");
+    });
+ }
 
 }

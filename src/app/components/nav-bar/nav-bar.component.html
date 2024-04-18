@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/products">Products</a>
+      <a mat-list-item routerLink="/about">About</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>
+        <img src="assets/Prefix_solid_black.png" style="width: 145px;" alt="prefix-logo">
+      </span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    <mat-toolbar class="footer">
+      <button id="prefix-button" color="primary" mat-button href="https://www.prefix.coffee/">Prefix.coffee</button>
+      <p>Andreas Dreckmeyr</p>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

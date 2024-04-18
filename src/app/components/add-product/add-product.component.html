@@ -11,10 +11,6 @@
     </div>
 
     <div>
-        <!-- <label  for="isDairy">has dairy.</label>
-        <input type="radio" id="isDairy" name="dairy"  value="true" [(ngModel)]="newItem.dairyfree">
-        <label for="isNotDairy">has no dairy.</label>
-        <input type="radio" id="isNotDairy" name="dairy" value="false" [(ngModel)]="newItem.dairyfree"> -->
         <label for="isDairy">Does it have Dairy</label>
         <input type="text" id="isDairy" name="isDairy" [(ngModel)]="newItem.dairyFree">
     </div>
@@ -29,8 +25,7 @@
         <input type="text" name="Image" id="Image" [(ngModel)]="newItem.imageUrl">
     </div>
 
-
-
-
     <button type="submit">CREATE</button>
 </form>
+
+<button mat-button [routerLink]='["/products"]'>Back</button>

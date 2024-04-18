@@ -1,10 +1,12 @@
-<header>
-    <img src="assets/Prefix_solid_black.png" alt="prefix-logo">
-</header>
-<div *ngFor="let item of coffeeList">
-    <h2>{{item.itemName}}</h2>
-    <p>{{item.description}}</p>
-    <p *ngIf="">It's Dairy Free!</p>
-    <p>{{item.price}}</p>
-    <img [src]="item.imageUrl" alt="coffeeImg"/>
-</div>
+
+<mat-card class="coffee-card" *ngFor="let item of coffeeList">
+    <mat-card-header>
+      <mat-card-title>{{item.itemName}}</mat-card-title>
+      <mat-card-subtitle><p>{{item.price}}</p></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{item.description}}</p>
+      <img mat-card-xl-image [src]="item.imageUrl" alt="coffeeImg"/>
+      <p *ngIf="'true' == item.dairyFree">It's Dairy Free!</p>
+    </mat-card-content>
+  </mat-card>

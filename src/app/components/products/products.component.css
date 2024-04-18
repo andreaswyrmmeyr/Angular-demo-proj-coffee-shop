@@ -1,0 +1,10 @@
+.coffee-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button {
+    margin: 8px 8px 8px 0;
+  }
